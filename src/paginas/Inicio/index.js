@@ -1,26 +1,34 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, ActivityIndicator } from 'react-native';
+import * as Animatable from 'react-native-animatable'
+import {useNavigation} from '@react-navigation/native'
 
 export default function Inicio() {
+
+  const navigation = useNavigation();
+
  return (
    <View style={styles.container}>
 
     <View style={styles.containerLogo}>
-      <Image
+      <Animatable.Image
+        animation="flipInY"
         source={require('../../assets/logomenor2-removebg.png')}
         style={{width:'100%'}}
         resizeMode="center"
       />
     </View>
 
-    <View style={styles.containerForm}>
+    <Animatable.View delay={1000} animation="fadeInUp" style={styles.containerForm}>
       <ActivityIndicator size="large" color="#080808"/>
       <Text style={styles.title}>Terapia com Profissionais Bem Próximo de Você ☺</Text>
-      <Text style={styles.text}>Faça Login para Começar</Text>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>ACESSAR</Text>
+      <TouchableOpacity 
+      style={styles.button}
+      onPress={ () => navigation.navigate('Entrar')}
+      >
+        <Text style={styles.buttonText}>COMEÇAR</Text>
       </TouchableOpacity>
-    </View>
+    </Animatable.View>
 
   </View>
 
@@ -48,12 +56,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginTop: 30
-  },
-  text:{
-    color: '#F2C4C4', 
-    textAlign: 'center',
-    padding: '10%'
-  },
+  },  
   button:{
     position: 'absolute',
     backgroundColor: '#f2c4c4',
@@ -61,7 +64,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     width: '60%', 
     alignSelf: 'center',
-    bottom: '15%',
+    bottom: '40%',
     alignItems: 'center',
     justifyContent: 'center'
   }, 
