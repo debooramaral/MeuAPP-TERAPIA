@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, StatusBar } from 'react-native';
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
 
@@ -9,6 +9,7 @@ export default function Entrar() {
 
  return (
    <View style={styles.container}>
+     <StatusBar backgroundColor="#BF3467" barStyle="dark-content"/>
       <Animatable.View animation="fadeInLeft" delay={1000} style={styles.containerHeader}>
         <Text style={styles.message}>Bem-Vindo(a)</Text>
       </Animatable.View>
@@ -26,7 +27,10 @@ export default function Entrar() {
           style={styles.input}
         />
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity 
+        style={styles.button}
+        onPress={() => navigation.navigate('Home')}
+        >
           <Text style={styles.buttonText}>LOGIN</Text>
         </TouchableOpacity>
 

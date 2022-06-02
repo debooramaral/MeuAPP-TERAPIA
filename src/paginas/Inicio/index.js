@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, ActivityIndicator, StatusBar } from 'react-native';
 import * as Animatable from 'react-native-animatable'
 import {useNavigation} from '@react-navigation/native'
 
@@ -9,6 +9,8 @@ export default function Inicio() {
 
  return (
    <View style={styles.container}>
+    
+    <StatusBar backgroundColor="#BF3467" barStyle="dark-content"/>
 
     <View style={styles.containerLogo}>
       <Animatable.Image

@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import Inicio from '../paginas/Inicio'
 import Entrar from '../paginas/Entrar'
 import Cadastrar from '../paginas/Cadastrar'
+import Home from '../paginas/Home'
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,12 @@ export default function Rotas(){
             <Stack.Screen
                 name="Cadastrar"
                 component={Cadastrar}
+                options={{headerShown: false}}
+            />
+
+            <Stack.Screen
+                name="Home"
+                component={Home}
                 options={{headerShown: false}}
             />
         </Stack.Navigator>
