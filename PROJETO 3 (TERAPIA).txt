@@ -1,0 +1,405 @@
+expo initi -nome-do-projeto-
+npm install -g expo-cli
+https://reactnavigation.org/docs/getting-started/
+	expo install @react-navigation/native
+	expo install react-native-screens react-native-safe-area-context
+https://reactnavigation.org/docs/hello-react-navigation
+	expo install @react-navigation/native-stack
+
+FDS em casa..
+
+https://www.npmjs.com/package/sharp-cli
+	npm i @expo/sharp-cli
+
+https://reactnavigation.org/docs/stack-navigator/
+	npm install @react-navigation/stack
+	expo install react-native-gesture-handler
+baixei extensão do sujeito programador .. para comandos rapidos
+
+ATENTAR PARA A ESCRITA CERTINHA DAS COISAS ! tipo as aspas, as propriedades da biblioteca, ao adicionar pacotes no terminal, tudo.
+
+Se for o caso de muito bug, faça limpeza no app da expo,"CLEAR" que roda certinho. 
+
+Para utilizar o LOADINGICON:
+	- https://styled-components.com/docs/basics
+		npm install --save styled-components
+	- https://docs.expo.dev/guides/using-styled-components/
+		importar, chamar na view e estilizar
+NÃO DEU CERTO!
+
+seguimos . . 
+
+https://www.pontodefusao.com/codigosalt/ icone para frase de bem vindo
+
+NÃO DEU CERTO EM DAR CONTINUIDADE.
+
+refazer!
+
+LOADING ICON - ACTIVITY INDICATOR: https://reactnative.dev/docs/activityindicator
+TEMPORIZADORES
+https://upmostly.com/tutorials/how-to-react-native-timer
+
+DEU CERTOOOOOOO ! 
+
+https://github.com/oblador/react-native-animatable
+	- expo install react-native-animatable
+		
+DEPURAÇÃO USB
+https://www.xda-developers.com/install-adb-windows-macos-linux/
+	- adb devices
+	NÃO DEU CERTO
+
+pagina CADASTRE:
+• ajustart statusbar para o background
+
+resolvido, é só importar e chamar na pagina em questão.
+
+• procurar icones?
+
+TELA DE INICIO, LOGIN E CADASTRO PRONTAAAAAAAAAAAS !
+
+------------------------------------------------------------
+
+TELA HOME
+
+https://reactnavigation.org/docs/tab-based-navigation
+	- expo install @react-navigation/bottom-tabs
+
+código:
+
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+function Home(){
+    return(
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+            <Text>HOME !!</Text>
+        </View>
+    );
+}
+
+function Agenda(){
+    return(
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+            <Text>PROCURE UM PROFISSIONAL E AGENDE</Text>
+        </View>
+    );
+}
+
+function Artigos(){
+    return(
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+            <Text>LEIA ARTIGOS SOBRE PSICOLOGIA</Text>
+        </View>
+    );
+}
+
+function VideoChamada(){
+    return(
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+            <Text>CONVERSE COM UM PROFISSIONAL E FAÇA TERAPIA EM VIDEO CHAMADA</Text>
+        </View>
+    );
+}
+
+const Tab = createBottomTabNavigator();
+
+export default function App(){
+    return(
+        <Tab.Navigator>
+            <Tab.Screen name='Home' component={Home}/>
+            <Tab.Screen name='Agenda' component={Agenda}/>
+            <Tab.Screen name='Artigos' component={Artigos}/>
+            <Tab.Screen name='VideoChamada' component={VideoChamada}/>
+        </Tab.Navigator>
+    )
+}
+
+---------------------------------------------------
+
+codigo 2
+
+import React from 'react';
+import { View, StatusBar } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import Home from '../Home/TabNavigator/home'
+import Mapa from './TabNavigator/mapa'
+import Leitura from './leitura';
+import CallOn from './TabNavigator/callon';
+
+function PaginaInicial(){
+    return(
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+            <StatusBar backgroundColor="white" barStyle="dark-content"/>
+            <Home/> 
+        </View>
+    );
+}
+
+function Agenda(){
+    return(
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+            <StatusBar backgroundColor="white" barStyle="dark-content"/>
+            <Mapa/>
+        </View>
+    );
+}
+
+function Artigos(){
+    return(
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+            <StatusBar backgroundColor="white" barStyle="dark-content"/>
+            <Leitura/>
+        </View>
+    );
+}
+
+function VideoChamada(){
+    return(
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+            <StatusBar backgroundColor="white" barStyle="dark-content"/>
+            <CallOn/>
+        </View>
+    );
+}
+
+const Tab = createBottomTabNavigator();
+
+export default function App(){
+    return(
+        <Tab.Navigator>
+            <Tab.Screen name='PaginaInicial' component={PaginaInicial}/>
+            <Tab.Screen name='Agenda' component={Agenda}/>
+            <Tab.Screen name='Artigos' component={Artigos}/>
+            <Tab.Screen name='VideoChamada' component={VideoChamada}/>
+        </Tab.Navigator>
+    )
+}
+
+---------------------------------------------------
+
+código de exemplo.. repetir 3x (leitura, mapa e home)
+
+import React from 'react';
+import { View, Text, StyleSheet} from 'react-native';
+
+export default function CallOn(){
+    return(
+        <View>
+            <Text>TESTANDOOOOOOOOO !! call online</Text>
+        </View>
+    );
+}
+
+lembrar de mudar a FUNCTION
+
+------------------------------------------------------
+
+AGORA É COMEÇAR A ESTILIZAR !
+
+https://www.jonataoliveira.com.br/tabbar-personalizada-em-react-native/
+
+https://www.npmjs.com/package/@expo/vector-icons
+- npm i @expo/vector-icons
+https://github.com/react-native-linear-gradient/react-native-linear-gradient#installation
+- npm install react-native-linear-gradient --save
+https://docs.expo.dev/versions/latest/sdk/linear-gradient/
+- expo install expo-linear-gradient
+
+não curti!
+
+--------------------------------------------------------
+
+<Tab.Navigator
+            tabBarOptions={{
+            style:{
+                backgroundColor: '#121212',
+                borderTopColor: 'transparent'
+            },
+            activeTintColor: '#FFF',
+            tabStyle:{
+                paddingBottom: 5,
+                paddingTop: 5,
+            }
+            }}
+        >
+</Tab.Navigator>
+
+--------------------------------------------------------
+
+Stack, Tab e Drawer
+
+https://www.youtube.com/watch?v=O49tGxZBvNw
+https://www.youtube.com/watch?v=RGp5xdidde8&ab_channel=OneBitCode
+https://www.youtube.com/watch?v=ah25k0Ib7vw&ab_channel=OneBitCode 8:10
+
+----------------------------------------------------------------
+
+rotas - index
+
+import {createNativeStackNavigator} from '@react-navigation/native-stack'
+
+import Inicio from '../paginas/Inicio'
+import Entrar from '../paginas/Entrar'
+import Cadastrar from '../paginas/Cadastrar'
+
+import Home from '../paginas/Home'
+
+const Stack = createNativeStackNavigator();
+
+export default function Rotas(){
+    return(
+        <Stack.Navigator>
+            <Stack.Screen
+                name="Inicio"
+                component={Inicio}
+                options={{headerShown: false}}
+            />
+
+            <Stack.Screen
+                name="Entrar"
+                component={Entrar}
+                options={{headerShown: false}}
+            />
+
+            <Stack.Screen
+                name="Cadastrar"
+                component={Cadastrar}
+                options={{headerShown: false}}
+            />
+        </Stack.Navigator>
+    )
+};
+
+------------------------------------------
+
+rotas com tab navigator
+
+import {createNativeStackNavigator} from '@react-navigation/native-stack'
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
+
+import Inicio from '../paginas/Inicio'
+import Entrar from '../paginas/Entrar'
+import Cadastrar from '../paginas/Cadastrar'
+
+import PaginaInicio from './src/tabnav/PaginaInicio'
+import Localizar from './src/tabnav/Localizar'
+
+const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
+
+function Tabs(){
+    return(
+        <Tab.Navigator>
+            <Tab.Screen name='PaginaInicio' component={PaginaInicio}/>
+            <Tab.Screen name='Localizar' component={Localizar}/>
+        </Tab.Navigator>
+    )
+}
+
+export default function Rotas(){
+    return(
+        <Stack.Navigator>
+            <Stack.Screen
+                name="Inicio"
+                component={Inicio}
+                options={{headerShown: false}}
+            />
+
+            <Stack.Screen
+                name="Entrar"
+                component={Entrar}
+                options={{headerShown: false}}
+            />
+
+            <Stack.Screen
+                name="Cadastrar"
+                component={Cadastrar}
+                options={{headerShown: false}}
+            />
+
+            <Stack.Screen
+                name="PaginaInicio"
+                component={Tabs}
+                options={{headerShown: false}}
+            />
+        </Stack.Navigator>
+    )
+};
+
+
+refazer, deu bug demais
+
+------------------------------------------------------ RECUPERADO!
+
+estilizando
+
+opções: https://reactnavigation.org/docs/bottom-tab-navigator/#options
+materiais: https://reactnavigation.org/docs/material-top-tab-navigator/
+
+instalação:
+
+SUPERIOR
+https://github.com/satya164/react-native-tab-view
+expo install react-native-pager-view
+
+INFERIOR
+https://reactnavigation.org/docs/material-bottom-tab-navigator
+expo install @react-navigation/material-bottom-tabs react-native-paper react-native-vector-icons
+
+só informações, não mudou muito o estilo da tab
+
+--------------------------------------------------------------
+
+continuando..
+https://www.youtube.com/watch?v=9mDgrietg44&ab_channel=CommunityCode
+
+instalação
+https://www.npmjs.com/package/react-native-vector-icons
+npm i react-native-vector-icons
+Biblioteca: https://icons.expo.fyi/
+
+ICONES da TAB: home, calendar, book e video
+NOVAS CORES: ROSINHA BEBE #F2C4C4 (paleta), VERDINHO #63FBB6, AZUL CLARO #71D9CE (paleta e ROXO CLARO #CC8FCC
+
+FUNCIONOU, icones OK
+
+------------------------------------------------
+
+https://www.youtube.com/watch?v=8CpsPbJFa54&ab_channel=Mr.J
+
+screenOptions={({route})} => ({
+                tabBarIcon: ({focused, size, colour}) => {
+                    let iconName;
+                    if(route.name == "home"){
+                        iconName = focused ? "home" : "home";
+                        size = focused ? size + 8 : size + 5;
+                    }else if (route.name == "calendar") {
+                        iconName = focused ? "calendar " : "calendar";
+                        size = focused ? size + 8 : size + 5;
+                    }else if (route.name == "book") {
+                        iconName = focused ? "book " : "book";
+                        size = focused ? size + 8 : size + 5;
+                    }else if (route.name == "video") {
+                        iconName = focused ? "video " : "video";
+                        size = focused ? size + 8 : size + 5;
+                    }
+                    return(
+                        <Feather name={iconName} size={size} colour={colour}/>
+                    )
+                },
+            })}
+            tabBarOptions={{
+                activeTintColor: 'black',
+                inactiveTintColor: 'black',
+                showLabel: false,
+                style: {
+                    backgroundColor: '#ffc125',
+                    height: 60,
+                },
+            }}
+-----------------------------------------------------
+
+como aplicar a cor na tab navigator?
