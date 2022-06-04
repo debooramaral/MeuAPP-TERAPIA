@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet} from 'react-native';
 
-export default function Mapa(){
+export default function CallOn(){
     return(
         <View>
-            <Text>agenda de horarios a partir de um mapa</Text>
+            <Text>opção para chamada de video com profissional</Text>
         </View>
     );
 }

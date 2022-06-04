@@ -10,7 +10,7 @@ export default function Entrar() {
  return (
    <View style={styles.container}>
      <StatusBar backgroundColor="#BF3467" barStyle="dark-content"/>
-      <Animatable.View animation="fadeInLeft" delay={1000} style={styles.containerHeader}>
+      <Animatable.View animation="fadeInLeft" delay={100} style={styles.containerHeader}>
         <Text style={styles.message}>Bem-Vindo(a)</Text>
       </Animatable.View>
 

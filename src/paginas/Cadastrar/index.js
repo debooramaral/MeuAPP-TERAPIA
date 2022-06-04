@@ -10,7 +10,7 @@ export default function Cadastrar() {
     return (
         <View style={styles.container}>
             <StatusBar backgroundColor="#93BF34" barStyle="dark-content"/>
-            <Animatable.View animation="fadeInUp" delay={500} styles={styles.containerHeader}>
+            <Animatable.View animation="fadeInUp" delay={100} styles={styles.containerHeader}>
                 <Text style={styles.message}>CADASTRE</Text>
             </Animatable.View>
 

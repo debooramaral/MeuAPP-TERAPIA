@@ -10,7 +10,7 @@ export default function Inicio() {
  return (
    <View style={styles.container}>
     
-    <StatusBar backgroundColor="#BF3467" barStyle="dark-content"/>
+    <StatusBar backgroundColor="#F2AE30" barStyle="dark-content"/>
 
     <View style={styles.containerLogo}>
       <Animatable.Image
@@ -40,17 +40,17 @@ export default function Inicio() {
 const styles = StyleSheet.create({
   container:{
     flex: 1,
-    backgroundColor: '#BF3467'
+    backgroundColor: '#F2AE30'
   },
   containerLogo:{
     flex: 2,
-    backgroundColor: '#BF3467',
+    backgroundColor: '#F2AE30',
     justifyContent: 'center',
     alignItems: 'center'
   },
   containerForm:{
     flex: 1, 
-    backgroundColor: '#BF3467', 
+    backgroundColor: '#F2AE30', 
     padding: '15%'
   },
   title:{
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   },  
   button:{
     position: 'absolute',
-    backgroundColor: '#f2c4c4',
+    backgroundColor: '#FFFF99',
     borderRadius: 50,
     paddingVertical: 8,
     width: '60%', 
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   }, 
   buttonText:{
     fontSize: 18,
-    color: '#f23064',
+    color: '#F2AE30',
     fontWeight: 'bold'
   }
 })
