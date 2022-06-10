@@ -1,12 +1,10 @@
-import React from 'react'
-import {NavigationContainer} from '@react-navigation/native'
-
-import Stack from './src/nav/stack.js'
-
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import Rotas from './src/rota'
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack/>
+        <Rotas/>
     </NavigationContainer>
   );
 }
