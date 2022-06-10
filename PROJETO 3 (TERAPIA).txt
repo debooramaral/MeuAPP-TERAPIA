@@ -403,3 +403,18 @@ screenOptions={({route})} => ({
 -----------------------------------------------------
 
 como aplicar a cor na tab navigator?
+
+-----------------------------------------------------
+refiz as pastas, com uma navegação mais decente. entretanto a sintaxe/semantica esta errada e é referente a importação/exportação
+
+https://bobbyhadz.com/blog/javascript-export-default-was-not-found#:~:text=The%20%22export%20default%20was%20not,from%20'.%2FmyModule'%20.
+
+PESQUISAR SOBRE: navegação de bottom tabs navigation mais claro, sem confusão
+
+---------------------------------------------------------
+
+não tem jeito! não encontrei saida para comunicar stack com tab navigation.
+
+além de misturar tudo as pastas e bagunçar mais ainda o projeto
+
+REFAZER?
