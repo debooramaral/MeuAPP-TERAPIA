@@ -3,6 +3,8 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity, StatusBar } from '
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
 
+
+
 export default function Entrar() {
 
   const navigation = useNavigation();
@@ -29,7 +31,7 @@ export default function Entrar() {
 
         <TouchableOpacity 
         style={styles.button}
-        onPress={() => navigation.navigate('')} /* aqui entra a tab navigation */
+        onPress={() => navigation.navigate('Home')} /* aqui entra a tab navigation */
         >
           <Text style={styles.buttonText}>LOGIN</Text>
         </TouchableOpacity>
